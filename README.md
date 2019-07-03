@@ -55,7 +55,7 @@ $ native-image --no-server --language:ruby -cp build/libs/complete-*.jar
 Once this process is completed, you can run the application.
 ```
 $ ./complete
-23:16:03.585 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 541ms. Server Running: http://localhost:8080
+23:16:03.585 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 15ms. Server Running: http://localhost:8080
 ```
 
 ### 1.6 References
