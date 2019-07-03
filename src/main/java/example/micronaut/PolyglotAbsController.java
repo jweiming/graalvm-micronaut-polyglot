@@ -13,22 +13,12 @@ public class PolyglotAbsController {
     }
 
     @Get("/java")
-    public String test() {
-        return "test success";
-    }
-
-    @Get("/js") 
-    public String jsAbs() { 
-        return polyglotAbsService.jsAbs(-42);
-    }
-
-    @Get("/python")     
-    public String pyAbs() {
-        return polyglotAbsService.pyAbs(-42);
+    public String javaAbs() {
+        return polyglotAbsService.javaAbs(-99);
     }
 
     @Get("/ruby")     
-    public String rbAbs() {
-        return polyglotAbsService.rbAbs(-42);
+    public String rubyAbs() {
+        return polyglotAbsService.rubyAbs(-99);
     }
 }
