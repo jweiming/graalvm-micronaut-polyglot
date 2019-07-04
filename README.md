@@ -34,7 +34,7 @@ You can run the jar file and execute GET calls to the service to verify the resp
 
 ```
 $ java -jar ./build/lib/complete-0.1.jar
-23:06:04.585 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 867ms. Server Running: http://localhost:8080
+23:06:04.585 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 996ms. Server Running: http://localhost:8080
 ```
 Open another terminal tab and try the following ```curl``` commands.
 
@@ -43,7 +43,7 @@ $  curl localhost:8080/meetup/random
 {"name":"Autonomous Data Warehouse"}
 
 $  curl localhost:8080/abs/ruby
-running abs in Ruby -> 42
+running abs in Ruby -> 99
 ```
 ### 1.5 Building the native image
 
@@ -56,6 +56,72 @@ Once this process is completed, you can run the application.
 ```
 $ ./complete
 23:16:03.585 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 541ms. Server Running: http://localhost:8080
+```
+
+### 1.6 Performance
+
+##### 1.6.1 Hotspot JVM
+
+```
+$ java -jar ./build/lib/complete-0.1.jar
+23:06:04.585 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 996ms. Server Running: http://localhost:8080
+
+$ time curl localhost:8080/meetup/random
+{"name":"Autonomous Data Warehouse"}
+real	0m0.136s
+user	0m0.003s
+sys	    0m0.001s
+
+$ time curl localhost:8080/meetup/random
+{"name":"Oracle Code One"}
+real	0m0.012s
+user	0m0.001s
+sys	    0m0.004s
+
+[joche@charon complete]$ time curl localhost:8080/abs/java
+running abs in Java -> 99
+real	0m0.012s
+user	0m0.001s
+sys	    0m0.003s
+
+[joche@charon complete]$ time curl localhost:8080/abs/ruby
+running abs in Ruby -> 99
+real	0m1.510s
+user	0m0.002s
+sys	0m0.001s
+
+```
+
+##### 1.6.2 Native image
+
+```
+$ ./complete 
+20:49:30.654 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 91ms. Server Running: http://localhost:8080
+
+$ curl localhost:8080/meetup/random
+{"name":"GraalVM"}[joche@time curl localhost:8080/meetup/random
+{"name":"Oracle Code One"}
+real	0m0.008s
+user	0m0.001s
+sys	    0m0.002s
+
+$ time curl localhost:8080/meetup/random
+{"name":"Wercker"}
+real	0m0.008s
+user	0m0.001s
+sys	    0m0.002s
+
+$ time curl localhost:8080/abs/java
+running abs in Java -> 99
+real	0m0.008s
+user	0m0.000s
+sys	    0m0.003s
+
+$ time curl localhost:8080/abs/ruby
+running abs in Ruby -> 99
+real	0m0.076s
+user	0m0.001s
+sys	    0m0.002s
 ```
 
 ### 1.6 References
