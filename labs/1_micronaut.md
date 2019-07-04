@@ -1,4 +1,4 @@
-# 1. Micronaut Graal Application 
+# Micronaut Graal Application 
 
 In this lab you will get familiar with creating Micronaut Graal application on GraalVM.
 
@@ -78,7 +78,7 @@ public class Meetup {
 }
 ```
 
-Create a Service:
+Create a Service ```MeetupService.java```
 
 src/main/java/example/micronaut/MeetupService.java
 
@@ -110,7 +110,29 @@ public class MeetupService {
 
 ### 4. Create the Controller
 
-Create a Controller with a method that returns a Conference. Micronaut will convert it automatically to JSON in the response:
+Create a Controller ```MeetupController.java```. Micronaut will convert it automatically to JSON in the response.
 
 src/main/java/example/micronaut/MeetupController.java
+
+```
+package example.micronaut;
+
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
+
+@Controller("/meetup") 
+public class MeetupController {
+
+    private final MeetupService meetupService;
+
+    public MeetupController(MeetupService meetupService) { 
+        this.meetupService = meetupService;
+    }
+
+    @Get("/random") 
+    public Meetup randomMeetup() { 
+        return meetupService.randomMeetup();
+    }
+}
+```
 
