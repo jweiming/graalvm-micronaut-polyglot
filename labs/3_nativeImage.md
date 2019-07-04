@@ -23,7 +23,25 @@ $ java -jar ./build/libs/complete-0.1.jar
 
 ### 2. Create Native Image inside Docker
 
-Once we have the fatjar, we can create the native image inside Docker.
+##### Including Ruby engine
+
+Since our example includes ```Ruby``` scripts, we need to modify the default ```Dockerfile``` to include the Ruby engine by GraalVM.
+
+```
+FROM oracle/graalvm-ce:19.0.0 as graalvm
+COPY . /home/app/complete
+WORKDIR /home/app/complete
+RUN gu install native-image
+RUN gu install ruby
+RUN native-image --no-server --language:ruby -cp build/libs/complete-*.jar
+
+FROM frolvlad/alpine-glibc
+EXPOSE 8080
+COPY --from=graalvm /home/app/complete .
+ENTRYPOINT ["./complete"]
+```
+
+We can now create the native image inside Docker.
 
 ```
 $ sudo ./docker-build.sh
