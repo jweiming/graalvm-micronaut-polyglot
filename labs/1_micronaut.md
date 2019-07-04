@@ -1,4 +1,4 @@
-# Micronaut Graal Application 
+# 1. Micronaut Graal Application 
 
 In this lab you will get familiar with creating Micronaut Graal application on GraalVM.
 
