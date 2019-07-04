@@ -42,7 +42,7 @@ Open another terminal tab and try the following ```curl``` commands.
 $  curl localhost:8080/meetup/random
 {"name":"Autonomous Data Warehouse"}
 
-$  curl localhost:8080/abs/ruby
+$  curl localhost:8080/abs/ruby/-99
 running abs in Ruby -> 99
 ```
 ### 1.5 Building the native image
@@ -78,13 +78,13 @@ real	0m0.012s
 user	0m0.001s
 sys	    0m0.004s
 
-[joche@charon complete]$ time curl localhost:8080/abs/java
+[joche@charon complete]$ time curl localhost:8080/abs/java/-99
 running abs in Java -> 99
 real	0m0.012s
 user	0m0.001s
 sys	    0m0.003s
 
-[joche@charon complete]$ time curl localhost:8080/abs/ruby
+[joche@charon complete]$ time curl localhost:8080/abs/ruby/-99
 running abs in Ruby -> 99
 real	0m1.510s
 user	0m0.002s
@@ -111,13 +111,13 @@ real	0m0.008s
 user	0m0.001s
 sys	    0m0.002s
 
-$ time curl localhost:8080/abs/java
+$ time curl localhost:8080/abs/java/-99
 running abs in Java -> 99
 real	0m0.008s
 user	0m0.000s
 sys	    0m0.003s
 
-$ time curl localhost:8080/abs/ruby
+$ time curl localhost:8080/abs/ruby/-99
 running abs in Ruby -> 99
 real	0m0.076s
 user	0m0.001s
