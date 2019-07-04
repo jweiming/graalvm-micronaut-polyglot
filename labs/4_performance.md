@@ -1,4 +1,4 @@
-# 3. Performance
+# 4. Performance
 
 In this lab you will get familiar with the benefits of GraalVM by running them faster by creating ahead-of-time compiled native images.
 
