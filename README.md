@@ -1,132 +1,54 @@
-# 1. Creating a Micronaut application with GraalVM native image
+# Developer Meetup on GraalVM
+The developer meetup provides an introduction to GraalVM and how it can be used to build simple polyglot applications. You will be going through a technical sharing on GraalVM and participating in a hands-on lab on building your own polyglot application on GraalVM.
 
-This project contains the completed code for a Micronaut application that uses GraalVM native image. In this example, you will be building the Micronaut application with Gradle and compiling the native-image (AOT) using the guest language (Ruby) as a polyglot application.
+The lab application used in this meetup is available at [link](link).
 
-### 1.1 What you will need
+## Agenda
 
-To complete the example, you will need the following:
+- Introduction to GraalVM
+- Accessing your development environment (Oracle Cloud Developer Image)
+- Installing Micronaut
+- Creating a Micronaut application with GraalVM
+- Embedding Ruby languange into Java (Polyglot)
+- Building the fatjar
+- Building the native image
 
-- Some time on your hands
-- Linux environment
-- GraalVM ([Installation guide](https://www.graalvm.org/docs/getting-started/))
+## Accessing Workshop Infrastructure
 
-### 1.2 Installing guest language
+For the workshop, a cloud compute instance ([Oracle Cloud Developer Image](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984)) is provisioned and you should be able to access it and use it for the duration of the workshop. 
 
-Java runs the JVM with GraalVM's default compiler. The Ruby, Python executables become available only if you install the corresponding language engines. For this example, you need to install Ruby.
+The access pack for the instances (e.g. instance details and SSH keys) are available at [link](link).
 
-```
-$ gu install ruby
-```
+## Lab Instructions on GraalVM
 
-### 1.3 Building the Micronaut application
-
-The native-image tool was extracted from the base GraalVM distribution. 
-
-```
-$ cd graalvm-micronaut-polyglot/
-$ ./gradlew assemble
-```
-The output fatjar will be in the ```./build/lib/``` directory.
-
-### 1.4 Verifying the application (Optional)
-
-You can run the jar file and execute GET calls to the service to verify the response.
+Note that once you have downloaded the access pack, you should be able to access your assigned instance with SSH. To verify that the instance is correct, try checking the version of ```Java```as follows.
 
 ```
-$ java -jar ./build/lib/complete-0.1.jar
-23:06:04.585 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 996ms. Server Running: http://localhost:8080
-```
-Open another terminal tab and try the following ```curl``` commands.
+$ ssh -i /path/to/private_key.pem opc@<server_host>
 
-```
-$  curl localhost:8080/meetup/random
-{"name":"Autonomous Data Warehouse"}
-
-$  curl localhost:8080/abs/ruby/-99
-running abs in Ruby -> 99
-```
-### 1.5 Building the native image
-
-In this example, ```Ruby``` language is embedded into the Micronaut Java application. We will need to include it as a guest language in the following command. Do note that this process includes the AOT and builds the native image will take some time (up to 10 mins).
-
-```
-$ native-image --no-server --language:ruby -cp build/libs/complete-*.jar 
-```
-Once this process is completed, you can run the application.
-```
-$ ./complete
-23:16:03.585 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 541ms. Server Running: http://localhost:8080
+[opc@javaociinstance ~]$ java -version
+java version "1.8.0_212"
+Java(TM) SE Runtime Environment (build 1.8.0_212-b31)
+Java HotSpot(TM) GraalVM EE 19.0.0 (build 25.212-b31-jvmci-19-b01, mixed mode)
 ```
 
-### 1.6 Performance
+You should see that GraalVM is already installed on the instance.
 
-##### 1.6.1 Hotspot JVM
+## Local Lab Instructions
 
-```
-$ java -jar ./build/lib/complete-0.1.jar
-23:06:04.585 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 996ms. Server Running: http://localhost:8080
+The various labs are organized into the following sections.
 
-$ time curl localhost:8080/meetup/random
-{"name":"Autonomous Data Warehouse"}
-real	0m0.136s
-user	0m0.003s
-sys	    0m0.001s
+- [1. Creating a Micronaut application]()
+- [2. Polyglot programming]()
+- [3. Building the native image]()
+- [4. Comparing the performance]()
 
-$ time curl localhost:8080/meetup/random
-{"name":"Oracle Code One"}
-real	0m0.012s
-user	0m0.001s
-sys	    0m0.004s
-
-[joche@charon complete]$ time curl localhost:8080/abs/java/-99
-running abs in Java -> 99
-real	0m0.012s
-user	0m0.001s
-sys	    0m0.003s
-
-[joche@charon complete]$ time curl localhost:8080/abs/ruby/-99
-running abs in Ruby -> 99
-real	0m1.510s
-user	0m0.002s
-sys	0m0.001s
+We recommend you to follow the instructions and create the app step by step. However, you can go right to the completed example by cloning the git repository.
 
 ```
-
-##### 1.6.2 Native image
-
-```
-$ ./complete 
-20:49:30.654 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 91ms. Server Running: http://localhost:8080
-
-$ curl localhost:8080/meetup/random
-{"name":"GraalVM"}[joche@time curl localhost:8080/meetup/random
-{"name":"Oracle Code One"}
-real	0m0.008s
-user	0m0.001s
-sys	    0m0.002s
-
-$ time curl localhost:8080/meetup/random
-{"name":"Wercker"}
-real	0m0.008s
-user	0m0.001s
-sys	    0m0.002s
-
-$ time curl localhost:8080/abs/java/-99
-running abs in Java -> 99
-real	0m0.008s
-user	0m0.000s
-sys	    0m0.003s
-
-$ time curl localhost:8080/abs/ruby/-99
-running abs in Ruby -> 99
-real	0m0.076s
-user	0m0.001s
-sys	    0m0.002s
+$ git clone https://github.com/jweiming/graalvm-micronaut-polyglot
 ```
 
-### 1.6 References
-- https://guides.micronaut.io/micronaut-creating-first-graal-app/guide/index.html
-- https://www.graalvm.org/docs/getting-started/
-- https://github.com/graalvm/graalvm-demos/tree/master/java-kotlin-aot
+
 
 
