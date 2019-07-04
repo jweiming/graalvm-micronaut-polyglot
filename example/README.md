@@ -78,13 +78,13 @@ real	0m0.012s
 user	0m0.001s
 sys	    0m0.004s
 
-[joche@charon complete]$ time curl localhost:8080/abs/java/-99
+$ time curl localhost:8080/abs/java/-99
 running abs in Java -> 99
 real	0m0.012s
 user	0m0.001s
 sys	    0m0.003s
 
-[joche@charon complete]$ time curl localhost:8080/abs/ruby/-99
+$ time curl localhost:8080/abs/ruby/-99
 running abs in Ruby -> 99
 real	0m1.510s
 user	0m0.002s
