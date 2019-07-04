@@ -48,7 +48,7 @@ We can now create the native image inside Docker.
 ```
 $ sudo ./docker-build.sh
 ```
-This process takes some time as it will process all the classes and dependencies of the application, including those from the JDK. It statically analyses these classes to determine which classes and methods are reachable and used during application execution. Then it passes all this reachable code as the input to the GraalVM compiler which ahead-of-time compiles it to the native binary. 
+The building process will takes some time as it will process all the classes and dependencies of the application, including those from the JDK. It statically analyses these classes to determine which classes and methods are reachable and used during application execution. Then it passes all this reachable code as the input to the GraalVM compiler which ahead-of-time compiles it to the native binary. 
 
 When the docker image is successfully built, it should show up in the list of Docker images locally.
 
