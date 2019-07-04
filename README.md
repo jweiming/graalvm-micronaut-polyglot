@@ -51,7 +51,7 @@ $ git clone https://github.com/jweiming/graalvm-micronaut-polyglot
 
 ## Credits
 
-The labs and materials are referenced to offical GraalVM resources.
+The labs and materials are referenced to official GraalVM resources.
 - https://guides.micronaut.io/micronaut-creating-first-graal-app/guide/index.html
 - https://www.graalvm.org/docs/getting-started/
 - https://www.graalvm.org/docs/getting-started/#native-images
