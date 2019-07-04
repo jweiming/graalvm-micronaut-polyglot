@@ -1,7 +1,7 @@
 # Developer Meetup on GraalVM
 The developer meetup provides an introduction to GraalVM and how it can be used to build simple polyglot applications. You will be going through a technical sharing on GraalVM and participating in a hands-on lab on building your own polyglot application on GraalVM.
 
-The lab application used in this meetup is available at [link](link).
+The lab exercises used in this meetup is available at [link](link).
 
 ## Agenda
 
