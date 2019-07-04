@@ -49,6 +49,10 @@ We recommend you to follow the instructions and create the app step by step. How
 $ git clone https://github.com/jweiming/graalvm-micronaut-polyglot
 ```
 
+## Credits
 
-
+The labs and materials are referenced to offical GraalVM resources.
+- https://guides.micronaut.io/micronaut-creating-first-graal-app/guide/index.html
+- https://www.graalvm.org/docs/getting-started/
+- https://www.graalvm.org/docs/getting-started/#native-images
 
