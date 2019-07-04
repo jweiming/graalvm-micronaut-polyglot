@@ -42,6 +42,7 @@ Create an app using the Micronaut Command Line Interface.
 
 ```
 $ mn create-app example.micronaut.complete --features=graal-native-image
+$ cd complete
 ```
 
 The previous command creates a micronaut app with the default package example.micronaut in a folder named complete and with support for Graal.
