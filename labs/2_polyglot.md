@@ -68,7 +68,6 @@ public class PolyglotAbsController {
         try{
             return polyglotAbsService.javaAbs(Integer.parseInt(value));
         } catch (NumberFormatException ex){
-            // do nothing
         }
         return "input is not integer";
     }
@@ -78,7 +77,6 @@ public class PolyglotAbsController {
         try{
             return polyglotAbsService.rubyAbs(Integer.parseInt(value));
         } catch (NumberFormatException ex){
-            // do nothing
         }
         return "input is not integer";
     }
