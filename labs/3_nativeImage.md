@@ -41,7 +41,7 @@ $ sudo docker images -a
 We can now run the application by running the Docker container.
 
 ```
-$ sudo docker run complete
+$ sudo docker run -p 8080:8080 complete
 ```
 After the server is started, you can open another terminal and access the service.
 ```
