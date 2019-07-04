@@ -12,13 +12,23 @@ public class PolyglotAbsController {
         this.polyglotAbsService = polyglotAbsService;
     }
 
-    @Get("/java")
-    public String javaAbs() {
-        return polyglotAbsService.javaAbs(-99);
+    @Get("/java/{value}")
+    public String javaAbs(String value) {
+        try{
+            return polyglotAbsService.javaAbs(Integer.parseInt(value));
+        } catch (NumberFormatException ex){
+            // do nothing
+        }
+        return "input is not integer";
     }
 
-    @Get("/ruby")     
-    public String rubyAbs() {
-        return polyglotAbsService.rubyAbs(-99);
+    @Get("/ruby/{value}")     
+    public String rubyAbs(String value) {
+        try{
+            return polyglotAbsService.rubyAbs(Integer.parseInt(value));
+        } catch (NumberFormatException ex){
+            // do nothing
+        }
+        return "input is not integer";
     }
 }
