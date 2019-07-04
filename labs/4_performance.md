@@ -39,7 +39,7 @@ Notice that when we are running the ```Ruby``` service, it took much more time t
 
 ### 2. Running on Native Image
 
-Now let's run the application on native image. Remember to terminate the previous application if you have not done so (```Ctrl+C```)
+Now let's run the application on native image. Remember to terminate the previous application if you have not done so (```ctrl+c```)
 
 ```
 $ sudo docker run complete 
@@ -69,5 +69,5 @@ real	0m0.076s
 user	0m0.001s
 sys	    0m0.001s
 ```
-That's it folks.
+That's all folks.
 
