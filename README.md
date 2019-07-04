@@ -38,10 +38,10 @@ You should see that GraalVM is already installed on the instance.
 
 The various labs are organized into the following sections.
 
-- [1. Creating a Micronaut application]()
-- [2. Polyglot programming]()
-- [3. Building the native image]()
-- [4. Comparing the performance]()
+- [1. Creating a Micronaut application](labs/1_micronaut.md)
+- [2. Polyglot programming](labs/2_polyglot.md)
+- [3. Building the native image](labs/3_nativeImage.md)
+- [4. Comparing the performance](labs/4_performance.md)
 
 We recommend you to follow the instructions and create the app step by step. However, you can go right to the completed example by cloning the git repository.
 
