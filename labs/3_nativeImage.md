@@ -18,7 +18,7 @@ $ ./gradlew assemble
 The builds the ```./build/libs/complete-0.1.jar```. As a standlone Micronaut application, you can run the application by using HotSpot JVM.
 
 ```
-$ java -jar .build/libs/complete-0.1.jar
+$ java -jar ./build/libs/complete-0.1.jar
 ```
 
 ### 2. Create Native Image inside Docker
