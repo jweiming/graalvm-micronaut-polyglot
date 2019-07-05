@@ -56,7 +56,7 @@ When the docker image is successfully built, it should show up in the list of Do
 $ sudo docker images -a
 ```
 
-### 3. Running the Application
+### 3. Running the Container
 
 We can now run the application by running the Docker container.
 
@@ -73,4 +73,17 @@ running abs in Java -> 99
 
 $ curl localhost:8080/abs/ruby/-99
 running abs in Ruby -> 99
+```
+
+### 4. Stopping the Container
+
+Open another terminal and stop the running container.
+
+```
+$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                    NAMES
+31f17c304311        complete            "./complete"        1 hours ago        Up 1 hours         0.0.0.0:8080->8080/tcp   zealous_saha
+
+$ sudo docker stop 31f17c304311
+31f17c304311
 ```
