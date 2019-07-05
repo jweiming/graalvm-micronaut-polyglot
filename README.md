@@ -25,9 +25,9 @@ A cloud compute instance ([Oracle Cloud Developer Image](https://cloudmarketplac
 
 ##### Access Information
 
-The access pack for the instances containing the host details and SSH keys will be emailed to you individually after you register with the lab assistants. You do not need to share instances as we will provide each individual with one instance for usage throughout the workshop.
+The access pack for the instance (host detail and SSH keys) will be emailed to you individually after registering with the lab assistants. Each individual will be allocated one dev instance for your usage throughout the duration of the workshop.
 
-**Note**: If you are using your windows machine and accessing the instance with Putty, you need to [convert the key to Putty format](https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/).
+**Note**: For Windows users accessing the instance with Putty, you need to [convert the provided key to Putty format](https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/).
 
 ## Lab Instructions
 
