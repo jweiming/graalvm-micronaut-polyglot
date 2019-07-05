@@ -21,11 +21,11 @@ For this workshop, you need a laptop (e.g. windows, mac os, linux) with the foll
 
 ##### Cloud Developer Instance
 
-A cloud compute instance ([Oracle Cloud Developer Image](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984)) has been provisioned and you should be able to access it via your laptop and use it for the duration of the workshop. 
+A cloud compute instance ([Oracle Cloud Developer Image](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984)) has been provisioned and you should be able to access it via your laptop and use it throughout the duration of the workshop. 
 
 ##### Access Information
 
-The access pack for the instances (e.g. instance details and SSH keys) are available at [link](link).
+The access pack for the instances containing the host details and SSH keys will be emailed to you individually after you register with the lab assistants. You do not need to share instances as we will provide each individual with one instance for usage throughout the workshop.
 
 ## Lab Instructions
 
