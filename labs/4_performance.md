@@ -42,7 +42,7 @@ Notice that when we are running the ```Ruby``` service, it took much more time t
 Now let's run the application on native image. Remember to terminate the previous application if you have not done so (```ctrl+c```)
 
 ```
-$ sudo docker run complete 
+$ sudo docker run -p 8080:8080 complete
 20:49:30.654 [main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 91ms. Server Running: http://localhost:8080
 ```
 At this point, notice how much faster the server starts up now, as compared to running it on HotSpot JVM.
