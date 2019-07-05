@@ -1,8 +1,6 @@
 # Developer Meetup on GraalVM
 The developer meetup provides an introduction to GraalVM and how it can be used to build simple polyglot applications. You will be going through a technical sharing on GraalVM and participating in a hands-on lab on building your own polyglot application on GraalVM.
 
-The lab exercises used in this meetup is available at [link](link).
-
 ## Agenda
 
 - Introduction to GraalVM
@@ -15,11 +13,21 @@ The lab exercises used in this meetup is available at [link](link).
 
 ## Accessing Workshop Infrastructure
 
-For the workshop, a cloud compute instance ([Oracle Cloud Developer Image](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984)) is provisioned and you should be able to access it and use it for the duration of the workshop. 
+##### Prerequisites
+
+For this workshop, you need a laptop (e.g. windows, mac os, linux) with the following
+- SSH client, or
+- VNC client
+
+##### Cloud Developer Instance
+
+A cloud compute instance ([Oracle Cloud Developer Image](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984)) has been provisioned and you should be able to access it via your laptop and use it for the duration of the workshop. 
+
+##### Access Information
 
 The access pack for the instances (e.g. instance details and SSH keys) are available at [link](link).
 
-## Lab Instructions on GraalVM
+## Lab Instructions
 
 Note that once you have downloaded the access pack, you should be able to access your assigned instance with SSH. To verify that the instance is correct, try checking the version of ```Java```as follows.
 
@@ -34,16 +42,20 @@ Java HotSpot(TM) GraalVM EE 19.0.0 (build 25.212-b31-jvmci-19-b01, mixed mode)
 
 You should see that GraalVM is already installed on the instance.
 
-## Local Lab Instructions
+## Hands-on Labs
 
-The various labs are organized into the following sections.
+The hands-on workshop is organized into the following sections in order. 
+
+Estimated time: 45 min
 
 - [1. Micronaut Graal Application](labs/1_micronaut.md)
 - [2. Graal Polyglot API](labs/2_polyglot.md)
 - [3. Building Native Image](labs/3_nativeImage.md)
 - [4. Performance](labs/4_performance.md)
 
-We recommend you to follow the instructions and create the app step by step. However, you can go right to the completed example by cloning the git repository.
+## Notes
+
+We recommend you to follow the instructions above and create the app step by step. However, you can go right to the completed example by cloning the git repository.
 
 ```
 $ git clone https://github.com/jweiming/graalvm-micronaut-polyglot
