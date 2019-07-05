@@ -34,7 +34,7 @@ The access pack for the instance (host detail and SSH keys) will be emailed to y
 Note that once you have downloaded the access pack, you should be able to access your assigned instance with SSH. To verify that the instance is correct, try checking the version of ```Java```as follows.
 
 ```
-$ ssh -i /path/to/private_key.pem opc@<server_host>
+$ ssh -i /path/to/id_rsa.txt opc@<server_host>
 
 [opc@javaociinstance ~]$ java -version
 java version "1.8.0_212"
