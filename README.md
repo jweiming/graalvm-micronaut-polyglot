@@ -15,9 +15,7 @@ The developer meetup provides an introduction to GraalVM and how it can be used 
 
 ##### Prerequisites
 
-For this workshop, you need a laptop (e.g. windows, mac os, linux) with the following
-- SSH client, or
-- VNC client
+For this workshop, you need a laptop (e.g. windows, mac os, linux) with a SSH client
 
 ##### Cloud Developer Instance
 
@@ -26,6 +24,8 @@ A cloud compute instance ([Oracle Cloud Developer Image](https://cloudmarketplac
 ##### Access Information
 
 The access pack for the instance (host detail and SSH keys) will be emailed to you individually after registering with the lab assistants. Each individual will be allocated one dev instance for your usage throughout the duration of the workshop.
+
+Access the instance with SSH key for ***opc*** user.
 
 **Note**: For Windows users accessing the instance with Putty, you need to [convert the provided key to Putty format](https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/).
 
