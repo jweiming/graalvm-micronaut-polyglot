@@ -15,7 +15,8 @@ The developer meetup provides an introduction to GraalVM and how it can be used 
 
 ##### Prerequisites
 
-For this workshop, you need a laptop (e.g. windows, mac os, linux) with a SSH client
+- For this workshop, you need a laptop (e.g. windows, mac os, linux) with a SSH client. 
+- Able to work in a Linux environment.
 
 ##### Cloud Developer Instance
 
